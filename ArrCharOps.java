@@ -9,10 +9,10 @@ public class ArrCharOps {
         // println(arr1);            // Prints an array of characters
         // System.out.println(charAt(arr1,6));      
         // System.out.println(indexOf(arr1,'y'));  
-        System.out.println(indexOf(arr1,'l',1)); 
+        // System.out.println(indexOf(arr1,'l',1)); 
         // System.out.println(equals(arr1 , arr2)); 
-        System.out.println(lastIndexOf(arr1, 'l'));
-        System.out.println(concat(arr1, arr2));
+        // System.out.println(lastIndexOf(arr1, 'l'));
+        // System.out.println(concat(arr1, arr2));
         System.out.println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd"));
         System.out.println(compareTo("abc", "abcd"));
@@ -104,8 +104,17 @@ public class ArrCharOps {
     /* Returns an array which is the concatanation of the two given arrays.
     */
     public static char[] concat(char[] arr1, char[] arr2) {
-        // Replace the following statement with your code
-        return null;
+        if (arr1.length <=0) return arr2;
+        if (arr2.length <=0) return arr1;
+        char [] arrsum = new char [arr1.length + arr2.length];
+        for (int i = 0 ; i < arr1.length ; i++){
+            arrsum[i] = arr1[i];
+        }
+        for (int i = 0 ; i < arr2.length ; i++){
+            arrsum[arr1.length + i] = arr2[i];
+        }
+        
+        return arrsum;
     }
 
     /** Returns a new array that can be described as a sub-array of this array.
@@ -114,20 +123,27 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        // Replace the following statement with your code
-        return null;
+        if (arr.length <=0 ) return null;
+        char [] subArr = new char [endIndex - beginIndex];
+        for (int i = beginIndex ; i < endIndex ; i++){
+            subArr[i - beginIndex] = arr[i];
+        }
+        return subArr;
     }
 
-     /** Returns a single integer that represents the given array. This integer is sometimes 
-     *  referred to as the array's "hash code". Later in the course we'll explain what these 
-     *  hash codes are used for. For now, simply implement the specification given below.
-     *  The hash code is computed as: arr[0]*7^(n-1) + arr[1]*7^(n-2) + ... + arr[n-2]*7 + arr[n-1]
-     *  where arr[i] is the i'th character of the array, and n is the array's length.
-     *  The hash value of an empty array is zero.
-     */
+    //  /** Returns a single integer that represents the given array. This integer is sometimes 
+    //  *  referred to as the array's "hash code". Later in the course we'll explain what these 
+    //  *  hash codes are used for. For now, simply implement the specification given below.
+    //  *  The hash code is computed as: arr[0]*7^(n-1) + arr[1]*7^(n-2) + ... + arr[n-2]*7 + arr[n-1]
+    //  *  where arr[i] is the i'th character of the array, and n is the array's length.
+    //  *  The hash value of an empty array is zero.
+    //  */
     public static long hashCode(char[] arr) {
-        // Replace the following statement with your code
-        return 0;
+        long value = 0;
+        for (int i = 0 ; i < arr.length ; i++){
+            value = value * 7 + arr[i]; 
+        }
+        return value;
     }
 
     /**
