@@ -5,10 +5,10 @@ public class ArrCharOps {
         String str = "clearly";
         char[] arr1 = {'c','l','e','a','r','l','y'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
-        System.out.println(str);  // Prints the string
-        println(arr1);            // Prints an array of characters
-        System.out.println(charAt(arr1,6));      
-        System.out.println(indexOf(arr1,'y'));  
+        // System.out.println(str);  // Prints the string
+        // println(arr1);            // Prints an array of characters
+        // System.out.println(charAt(arr1,6));      
+        // System.out.println(indexOf(arr1,'y'));  
         System.out.println(indexOf(arr1,'l',3)); 
         System.out.println(equals(arr1 , arr2)); 
         System.out.println(lastIndexOf(arr1, 'l'));
@@ -75,8 +75,15 @@ public class ArrCharOps {
      */
     public static int indexOf(char[] arr, char ch, int fromIndex) {
         int i = fromIndex;
-
-        return -1;
+        if (arr.length <= 0){
+            return -1;
+        }
+            for (i = i ; i < arr.length ; i++){
+                if (arr[i] == ch) {
+                return i;
+            }
+        }
+            return -1;
     }
 
     /** Returns the index within the given arr of the last occurrence of the given character.
