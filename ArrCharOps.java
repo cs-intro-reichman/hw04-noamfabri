@@ -13,7 +13,7 @@ public class ArrCharOps {
         // System.out.println(equals(arr1 , arr2)); 
         // System.out.println(lastIndexOf(arr1, 'l'));
         // System.out.println(concat(arr1, arr2));
-        System.out.println(subArray(arr2, 2, 9));
+        // System.out.println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd"));
         System.out.println(compareTo("abc", "abcd"));
         System.out.println(compareTo("abw", "abcd"));
@@ -21,8 +21,8 @@ public class ArrCharOps {
         System.out.println(compareTo("apple", "banana"));
         System.out.println(compareTo("apple", "applepie"));
         System.out.println(compareTo("Zoo", "zoo"));
-        System.out.println(hashCode(arr1));
-        System.out.println(hashCode(arr2));
+        // System.out.println(hashCode(arr1));
+        // System.out.println(hashCode(arr2));
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -140,7 +140,7 @@ public class ArrCharOps {
     //  */
     public static long hashCode(char[] arr) {
         long value = 0;
-        for (int i = 0 ; i < arr.length ; i++){
+        for (int i = 0 ; i < arr.length ; i++) {
             value = value * 7 + arr[i]; 
         }
         return value;
@@ -172,7 +172,20 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        // Replace the following statement with your code
+        int l1 =  str1.length();
+        int l2 =  str2.length();
+        for ( int i = 0 ; i < Math.min(l1, l2) ; i++){
+            if (str1.charAt(i) == str2.charAt(i)) {
+            } else if (str1.charAt(i) < str2.charAt(i)) {
+                return -1;
+            } else 
+                return 1;    
+        }
+        if (l1 < l2){
+            return -1;
+        } else if ( l1 > l2){
+            return 1;
+        }
         return 0;
     }
 }
