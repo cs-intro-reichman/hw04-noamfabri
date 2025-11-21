@@ -9,8 +9,8 @@ public class ArrCharOps {
         // println(arr1);            // Prints an array of characters
         // System.out.println(charAt(arr1,6));      
         // System.out.println(indexOf(arr1,'y'));  
-        System.out.println(indexOf(arr1,'l',3)); 
-        System.out.println(equals(arr1 , arr2)); 
+        System.out.println(indexOf(arr1,'l',1)); 
+        // System.out.println(equals(arr1 , arr2)); 
         System.out.println(lastIndexOf(arr1, 'l'));
         System.out.println(concat(arr1, arr2));
         System.out.println(subArray(arr2, 2, 9));
@@ -90,8 +90,15 @@ public class ArrCharOps {
      *  If no such character is found, returns -1.
      */
     public static int lastIndexOf(char[] arr, char ch) {
-        // Replace the following statement with your code
-        return -1;
+       if (arr.length <= 0){
+            return -1;
+        }
+            for (int i = arr.length - 1 ; i > 0; i--){
+                if (arr[i] == ch) {
+                return i;
+            }
+        }
+            return -1;
     }
 
     /* Returns an array which is the concatanation of the two given arrays.
