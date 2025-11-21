@@ -7,9 +7,10 @@ public class ArrCharOps {
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
         System.out.println(str);  // Prints the string
         println(arr1);            // Prints an array of characters
-        System.out.println(charAt(arr1,2));      
-        System.out.println(indexOf(arr1,'l'));  
+        System.out.println(charAt(arr1,6));      
+        System.out.println(indexOf(arr1,'y'));  
         System.out.println(indexOf(arr1,'l',3)); 
+        System.out.println(equals(arr1 , arr2)); 
         System.out.println(lastIndexOf(arr1, 'l'));
         System.out.println(concat(arr1, arr2));
         System.out.println(subArray(arr2, 2, 9));
@@ -36,30 +37,45 @@ public class ArrCharOps {
     /** Returns the char value at the specified index. Assume that the array is non-empty.
      */
     public static char charAt(char[] arr, int index) {
-        // Replace the following statement with your code
-        return 0;
+        char a = arr[index];
+        return a;
     }
 
     /** If the two arrays have the same value in every index, 
      *  returns true; Otherwise returns false.
      */
     public static boolean equals(char[] arr1, char[] arr2) {
-        // Replace the following statement with your code
-        return false;
+        if (arr1.length != arr2.length){
+            return false;
+        }
+        for (int i = 0 ; i < arr1.length ; i++){
+            if (arr1[i] != arr2[i]) {
+            return false;
+            }
+        }
+        return true;
+
     }
 
     /** Returns the index within the given array of the first occurrence of the given character.
      *  If no such character is found, returns -1.
      */
     public static int indexOf(char[] arr, char ch) {
-        // Replace the following statement with your code
-        return -1;
+        if (arr.length <= 0){
+            return -1;
+        }
+            for (int i = 0 ; i < arr.length ; i++){
+                if (arr[i] == ch) {
+                return i;
+            }
+        }
+            return -1;
     }
-
     /** Same as indexOf(char[], char), but starts the search in the given index.
      */
     public static int indexOf(char[] arr, char ch, int fromIndex) {
-        // Replace the following statement with your code
+        int i = fromIndex;
+
         return -1;
     }
 
