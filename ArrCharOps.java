@@ -104,8 +104,8 @@ public class ArrCharOps {
     /* Returns an array which is the concatanation of the two given arrays.
     */
     public static char[] concat(char[] arr1, char[] arr2) {
-        if (arr1.length <=0) return arr2;
-        if (arr2.length <=0) return arr1;
+        // if (arr1.length <=0) return arr2;
+        // if (arr2.length <=0) return arr1;
         char [] arrsum = new char [arr1.length + arr2.length];
         for (int i = 0 ; i < arr1.length ; i++){
             arrsum[i] = arr1[i];
@@ -123,7 +123,7 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        // if (arr.length <=0 ) return null;
+        if (arr.length <=0 ) return null;
         char [] subArr = new char [endIndex - beginIndex];
         for (int i = beginIndex ; i < endIndex ; i++){
             subArr[i - beginIndex] = arr[i];
