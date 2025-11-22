@@ -5,15 +5,15 @@ public class ArrCharOps {
         String str = "clearly";
         char[] arr1 = {'c','l','e','a','r','l','y'};
         char[] arr2 = {'U','n','d','e','r','s','t', 'o', 'o', 'd'};
-        // System.out.println(str);  // Prints the string
-        // println(arr1);            // Prints an array of characters
-        // System.out.println(charAt(arr1,6));      
-        // System.out.println(indexOf(arr1,'y'));  
-        // System.out.println(indexOf(arr1,'l',1)); 
-        // System.out.println(equals(arr1 , arr2)); 
-        // System.out.println(lastIndexOf(arr1, 'l'));
-        // System.out.println(concat(arr1, arr2));
-        // System.out.println(subArray(arr2, 2, 9));
+        System.out.println(str);  // Prints the string
+        println(arr1);            // Prints an array of characters
+        System.out.println(charAt(arr1,6));      
+        System.out.println(indexOf(arr1,'y'));  
+        System.out.println(indexOf(arr1,'l',1)); 
+        System.out.println(equals(arr1 , arr2)); 
+        System.out.println(lastIndexOf(arr1, 'l'));
+        System.out.println(concat(arr1, arr2));
+        System.out.println(subArray(arr2, 2, 9));
         System.out.println(compareTo("abcd", "abcd"));
         System.out.println(compareTo("abc", "abcd"));
         System.out.println(compareTo("abw", "abcd"));
@@ -172,9 +172,9 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
+        if (str1 == null || str2 == null) return -2;
         int l1 =  str1.length();
         int l2 =  str2.length();
-        if (str1 == null || str2 == null) return -2;
         if ( l1 == 0 || l2 == 0) return -2;
         for ( int i = 0 ; i < Math.min(l1, l2) ; i++){
             if (str1.charAt(i) == str2.charAt(i)) {
