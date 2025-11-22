@@ -159,7 +159,7 @@ public class ArrCharOps {
      * 3. If both strings have the same characters and the same length, they are considered equal.
      * 
      * Examples:
-     * - "apple" is less than "banana" because 'a' comes before 'b'.
+     * -    
      * - "abc" is less than "abcd" because it is shorter.
      * - "hello" is equal to "hello".
      * - "date" is greater than "dark" because 't' comes after 'k'.
@@ -174,6 +174,7 @@ public class ArrCharOps {
     public static int compareTo(String str1, String str2) {
         int l1 =  str1.length();
         int l2 =  str2.length();
+        if (str1 == null || str2 == null) return -2;
         if ( l1 == 0 || l2 == 0) return -2;
         for ( int i = 0 ; i < Math.min(l1, l2) ; i++){
             if (str1.charAt(i) == str2.charAt(i)) {
@@ -188,5 +189,5 @@ public class ArrCharOps {
             return 1;
         }
         return 0;
-    }
+    }   
 }
