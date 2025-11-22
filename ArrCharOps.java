@@ -104,8 +104,8 @@ public class ArrCharOps {
     /* Returns an array which is the concatanation of the two given arrays.
     */
     public static char[] concat(char[] arr1, char[] arr2) {
-        // if (arr1.length <=0) return arr2;
-        // if (arr2.length <=0) return arr1;
+        if (arr1.length <=0) return arr2;
+        if (arr2.length <=0) return arr1;
         char [] arrsum = new char [arr1.length + arr2.length];
         for (int i = 0 ; i < arr1.length ; i++){
             arrsum[i] = arr1[i];
@@ -172,6 +172,8 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
         if (str1 == null || str2 == null) return -2;
         int l1 =  str1.length();
         int l2 =  str2.length();
