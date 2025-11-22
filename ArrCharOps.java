@@ -21,8 +21,8 @@ public class ArrCharOps {
         System.out.println(compareTo("apple", "banana"));
         System.out.println(compareTo("apple", "applepie"));
         System.out.println(compareTo("Zoo", "zoo"));
-        // System.out.println(hashCode(arr1));
-        // System.out.println(hashCode(arr2));
+        System.out.println(hashCode(arr1));
+        System.out.println(hashCode(arr2));
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -123,7 +123,7 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        if (arr.length <=0 ) return null;
+        // if (arr.length <=0 ) return null;
         char [] subArr = new char [endIndex - beginIndex];
         for (int i = beginIndex ; i < endIndex ; i++){
             subArr[i - beginIndex] = arr[i];
