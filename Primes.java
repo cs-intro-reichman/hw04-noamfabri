@@ -1,5 +1,26 @@
 public class Primes {
     public static void main(String[] args) {
-        // Replace this statement with your code
+        int N = Integer.parseInt(args[0]);
+        boolean [] arr = new boolean [N + 1];
+        int count = 0;
+        for (int i = 2 ; i <= N ; i++){
+            arr[i] = true;
+        }
+        System.out.println("Prime numbers up to " + N + ":");
+        int j = 2;
+        while (j <= N) {
+            if (arr[j] == true) {
+                count++;
+                System.err.println(j);
+                int p = j + j;
+                while (p <= N) {
+                    arr[p] = false;
+                    p = p + j;
+                }
+            }
+            j++;
+        }
+        int primesInPrecents = N / count * 10;
+        System.out.println("There are " + count + " primes between 2 and " + N + " (" + primesInPrecents + "% are primes)");
     }
 }
