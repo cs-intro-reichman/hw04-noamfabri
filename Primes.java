@@ -11,7 +11,7 @@ public class Primes {
         while (j <= N) {
             if (arr[j] == true) {
                 count++;
-                System.err.println(j);
+                System.out.println(j);
                 int p = j + j;
                 while (p <= N) {
                     arr[p] = false;
@@ -20,7 +20,7 @@ public class Primes {
             }
             j++;
         }
-        int primesInPrecents = N / count * 10;
+        int primesInPrecents = count * 100 / N ;
         System.out.println("There are " + count + " primes between 2 and " + N + " (" + primesInPrecents + "% are primes)");
     }
 }
