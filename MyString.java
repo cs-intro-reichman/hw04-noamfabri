@@ -23,7 +23,7 @@ public class MyString {
         int L = str.length();
         for (int i = 0 ; i < L ; i++){
             if (str.charAt(i) <= 90 && str.charAt(i) >= 65){
-            newStr = newStr + ((char) str.charAt(i) + 32);
+            newStr = newStr + ((char) (str.charAt(i) + 32));
             } else {  
             newStr = newStr + (char) str.charAt(i);
             }
@@ -37,12 +37,13 @@ public class MyString {
         for (int i = 0 ; i <= str1.length() - str2.length() ; i++){
             boolean found = true;
             for (int j = 0 ; j < str2.length() ; j++){
-                if (str1.charAt(i + j) != str2.charAt(j))
+                if (str1.charAt(i + j) != str2.charAt(j)) {
                     found = false;
                 break;
                 }
             }
-            
-        return true;
-    } 
+            if (found) return true;
+        } 
+        return false;
+    }
 }
